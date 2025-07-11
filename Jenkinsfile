@@ -27,6 +27,13 @@ pipeline {
                 bat 'mvn test'
             }
         }
+
+        stage('Code Coverage') {
+            steps {
+                echo '📈 Generating JaCoCo coverage report...'
+                bat 'mvn verify'
+            }
+        }
     }
 
     post {
